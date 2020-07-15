@@ -1,9 +1,9 @@
-### Setup
-#### Install python
+## Setup
+### Install python
 
 `$ brew install python`
 
-#### Python/Django require a virtual environment to be setup
+### Python/Django require a virtual environment to be setup
 
 `$ python3 -m pip install virtualenv`
 
@@ -31,5 +31,5 @@
 
 Visit `localhost:8000`
 
-#### To deactivate the virtual environment (if your CLI has `venv` in front)
+### To deactivate the virtual environment (if your CLI has `venv` in front)
 `$ deactivate`
