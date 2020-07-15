@@ -1,5 +1,9 @@
 ### Setup
+#### Install python
+
 `$ brew install python`
+
+#### Python/Django require a virtual environment to be setup
 
 `$ python3 -m pip install virtualenv`
 
@@ -10,6 +14,7 @@
 `$ pip install django`
 
 ### Setting up database
+
 `$ psql`
 
 `$ CREATE DATABASE copwatch;`
@@ -25,3 +30,6 @@
 `$ python manage.py runserver`
 
 Visit `localhost:8000`
+
+#### To deactivate the virtual environment (if your CLI has `venv` in front)
+`$ deactivate`
