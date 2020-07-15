@@ -23,7 +23,9 @@
 
 ### Running server locally
 
-`$ cd CopWatchBE`
+`$ git clone git@github.com:DavidTTran/CopWatch-BE.git`
+
+`$ cd CopWatch-BE`
 
 `$ source venv/bin/activate` so that your CLI has `(venv)` before your file location
 
@@ -31,5 +33,5 @@
 
 Visit `localhost:8000`
 
-### To deactivate the virtual environment (if your CLI has `venv` in front)
+### To deactivate the virtual environment (if your CLI has `(venv)` in front)
 `$ deactivate`
