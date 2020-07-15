@@ -9,6 +9,13 @@
 
 `$ pip install django`
 
+### Setting up database
+`$ psql`
+
+`$ CREATE DATABASE copwatch;`
+
+`$ \du` Make sure you have a superuser named `postgres`
+
 ### Running server locally
 
 `$ cd CopWatchBE`
