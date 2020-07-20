@@ -14,9 +14,9 @@ from models import Report
 def hello():
     return "Hello World!"
 
-@app.route("/name/<name>")
-def get_book_name(name):
-    return "name : {}".format(name)
+@app.route("/api/reports")
+def test():
+    return "endpoint successful"
 
 @app.route("/details")
 def get_book_details():
@@ -26,4 +26,3 @@ def get_book_details():
 
 if __name__ == '__main__':
     app.run()
-    

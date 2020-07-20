@@ -25,3 +25,10 @@ class DevelopmentConfig(Config):
 
 class TestingConfig(Config):
     TESTING = True
+    SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/copwatch_test'
+    DEBUG = True
+
+app_config = {
+    'development': DevelopmentConfig,
+    'testing': TestingConfig
+}
