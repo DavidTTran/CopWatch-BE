@@ -36,11 +36,15 @@ DATABASE_URL="postgresql://localhost/copwatch"
 ### Setup Database and necessary libraries
 `$ psql`
 
-`$ CREATE DATABASE copwatch`
+`$ CREATE DATABASE copwatch;`
 
 `$ \q`
 
 ### Running migrations
+`$ export APP_SETTINGS="config.DevelopmentConfig"`
+
+`$ export DATABASE_URL="postgresql://localhost/copwatch"`
+
 `$ python manage.py db init`
 
 `$ python manage.py db migrate`
