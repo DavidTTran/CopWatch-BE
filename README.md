@@ -55,3 +55,7 @@ DATABASE_URL="postgresql://localhost/copwatch"
 `$ python manage.py runserver`
 
 Visit at `localhost:5000`
+
+## Current Endpoints
+
+`localhost:5000/api/v1/reports
