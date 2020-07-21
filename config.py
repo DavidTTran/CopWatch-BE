@@ -8,27 +8,24 @@ class Config(object):
     SECRET_KEY = 'this-really-needs-to-be-changed'
     SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 
-
 class ProductionConfig(Config):
     DEBUG = False
-
+    TESTING = False
 
 class StagingConfig(Config):
     DEVELOPMENT = True
     DEBUG = True
 
-
 class DevelopmentConfig(Config):
     DEVELOPMENT = True
     DEBUG = True
-
 
 class TestingConfig(Config):
     TESTING = True
     SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/copwatch_test'
     DEBUG = True
 
-app_config = {
-    'development': DevelopmentConfig,
-    'testing': TestingConfig
-}
+# app_config = {
+#     'development': DevelopmentConfig,
+#     'testing': TestingConfig
+# }

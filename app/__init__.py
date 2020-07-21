@@ -1,15 +1,16 @@
-from flask_api import FlaskAPI
+import os
+from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 
-from instance.config import app_config
+app = Flask(__name__)
 
-db = SQLAlchemy()
+app.config.from_object(os.environ['APP_SETTINGS'])
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
 
-def create_app(config_name):
-    app = FlaskAPI(__name__, instance_relative_config=True)
-    app.config.from_object(app_config[config_name])
-    app.config.from_pyfile('config.py')
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    db.init_app(app)
+from app.models.report import Report
+from app.controllers.reports import ReportRoutes
+from app.controllers.welcome import WelcomeRoutes
 
-    return app
+if __name__ == '__main__':
+    app.run()
