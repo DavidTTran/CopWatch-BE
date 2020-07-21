@@ -14,7 +14,7 @@ from models import Report
 def hello():
     return "Hello World!"
 
-@app.route("/api/reports")
+@app.route("/api/v1/reports")
 def test():
     return "endpoint successful"
 
