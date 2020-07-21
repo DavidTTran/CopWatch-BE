@@ -12,18 +12,9 @@
 
 `$ source venv/bin/activate`
 
-### Install Flask
+### Install Flask and necessary libraries
 Within your virtual environment
 `$ pip install Flask`
-
-`$ pip install flask_sqlalchemy
-
-### Setup Database and necessary libraries
-`$ psql`
-
-`$ CREATE DATABASE copwatch`
-
-`$ \q`
 
 `$ pip install flask_sqlalchemy`
 
@@ -32,6 +23,22 @@ Within your virtual environment
 `$ pip install flask_migrate`
 
 `$ pip install psycopg2-binary`
+
+### Setup .env
+`$ touch .env`
+
+Append the following to your .env file
+```
+APP_SETTINGS="config.DevelopmentConfig"
+DATABASE_URL="postgresql://localhost/copwatch"
+```
+
+### Setup Database and necessary libraries
+`$ psql`
+
+`$ CREATE DATABASE copwatch`
+
+`$ \q`
 
 ### Running migrations
 `$ python manage.py db init`
@@ -42,3 +49,5 @@ Within your virtual environment
 
 ### Run server locally
 `$ python manage.py runserver`
+
+Visit at `localhost:5000`
