@@ -13,9 +13,17 @@ class Report(db.Model):
     city = db.Column(db.String())
     state = db.Column(db.String())
     zip_code = db.Column(db.String())
-    created_date = Column(DateTime, default=datetime.datetime.utcnow)
+    createdDate = Column(db.String())
 
-    def __init__(self, description, city, state, zip_code):
+    def __init__(self,
+                 description,
+                 city,
+                 state,
+                 zip_code,
+                 officer_name,
+                 created_date,
+                 badge_number,
+                 parties):
         self.description = description
         self.badge_number = badge_number
         self.officer_name = officer_name
@@ -26,7 +34,7 @@ class Report(db.Model):
         self.created_date = created_date
 
     def __repr__(self):
-        return '<id: {}>'.format(self.id)
+        return 'id: {}'.format(self.id)
 
     def serialize(self):
         return {
@@ -38,5 +46,5 @@ class Report(db.Model):
             'city': self.city,
             'state': self.state,
             'zip_code': self.zip_code,
-            'self.created_date': self.created_date
+            'created_date': self.created_date
         }
