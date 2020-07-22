@@ -15,6 +15,7 @@ class ReportRoutes:
         reports = Report.query \
             .order_by(Report.created_date.desc()) \
             .all()
+
         return jsonify([e.serialize() for e in reports])
 
     @app.route("/api/v1/reports/new", methods=['POST'])
