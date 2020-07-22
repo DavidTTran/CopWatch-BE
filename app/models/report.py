@@ -13,7 +13,7 @@ class Report(db.Model):
     city = db.Column(db.String())
     state = db.Column(db.String())
     zip_code = db.Column(db.String())
-    createdDate = Column(db.String())
+    created_date = Column(db.String())
 
     def __init__(self,
                  description,
