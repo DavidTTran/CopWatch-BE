@@ -10,6 +10,10 @@ app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
+def _cors_response(response):
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response
+
 from app.models.report import Report
 from app.controllers.reports import ReportRoutes
 from app.controllers.welcome import WelcomeRoutes
