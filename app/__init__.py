@@ -1,7 +1,7 @@
 import os
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from flask_cors import CORS, cross_origin
+from flask-cors import CORS
 
 app = Flask(__name__)
 cors = CORS(app)
