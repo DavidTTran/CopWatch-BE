@@ -65,6 +65,12 @@ Visit at `localhost:5000`
 
 `$ pip install coverage`
 
+### Without Coverage Report
+
+`$ pytest`
+
+### With Coverage Report
+
 `$ coverage run -m pytest`
 
 `$ coverage html --omit="*/venv*"`
