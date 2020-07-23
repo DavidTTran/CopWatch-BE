@@ -62,3 +62,4 @@ Visit at `localhost:5000`
 
 ## Testing
 `pip install pytest`
+From the command line: `pytest`
