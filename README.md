@@ -61,5 +61,6 @@ Visit at `localhost:5000`
 `localhost:5000/api/v1/reports`
 
 ## Testing
-`pip install pytest`  
-From the command line: `pytest`
+`$ pip install pytest`
+
+`$ pytest`
