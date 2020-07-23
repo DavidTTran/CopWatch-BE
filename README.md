@@ -58,4 +58,7 @@ Visit at `localhost:5000`
 
 ## Current Endpoints
 
-`localhost:5000/api/v1/reports
+`localhost:5000/api/v1/reports`
+
+## Testing
+`pip install pytest`
