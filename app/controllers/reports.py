@@ -1,3 +1,4 @@
+import os
 from app import app, db, _cors_response
 from flask import Flask, request, jsonify, make_response
 from flask_sqlalchemy import SQLAlchemy
@@ -5,7 +6,7 @@ from app.models.report import Report
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-engine = create_engine('postgresql://localhost/copwatch')
+engine = create_engine(os.environ['DATABASE_URL'])
 Session = sessionmaker(bind=engine)
 session = Session()
 
