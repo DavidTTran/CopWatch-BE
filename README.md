@@ -65,11 +65,11 @@ Visit at `localhost:5000`
 
 `$ pip install coverage`
 
-### Without Coverage Report
+#### Without Coverage Report
 
 `$ pytest`
 
-### With Coverage Report
+#### With Coverage Report
 
 `$ coverage run -m pytest`
 
