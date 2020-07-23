@@ -63,4 +63,10 @@ Visit at `localhost:5000`
 ## Testing
 `$ pip install pytest`
 
-`$ pytest`
+`$ pip install coverage`
+
+`$ coverage run -m pytest`
+
+`$ coverage html --omit="*/venv*"`
+
+`$ open htmlcov/index.html`
