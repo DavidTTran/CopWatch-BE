@@ -56,14 +56,24 @@ DATABASE_URL="postgresql://localhost/copwatch"
 
 Visit at `localhost:5000`
 
-## Current Endpoints
+# Current Endpoints
 
+### Returns all of the reports in the Database sorted by most recent.
 `localhost:5000/api/v1/reports`
 
-## Testing
+### Creates a new report with information passed through the body in JSON
+`localhost:5000/api/v1/reports/new`
+
+# Testing
 `$ pip install pytest`
 
 `$ pip install coverage`
+
+### Without Coverage Report
+
+`$ pytest`
+
+### With Coverage Report
 
 `$ coverage run -m pytest`
 
