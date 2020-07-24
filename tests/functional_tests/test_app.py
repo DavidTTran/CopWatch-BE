@@ -8,7 +8,7 @@ load_dotenv()
 import os
 env_url = os.environ.get('TEST_URL')
 
-url = f'http://{env_url}'
+url = f'{env_url}'
 
 def test_index_page():
     response = requests.get(url+'/api/v1/reports')
