@@ -56,14 +56,20 @@ DATABASE_URL="postgresql://localhost/copwatch"
 
 Visit at `localhost:5000`
 
-## Current Endpoints
+# Current Endpoints
 
 `localhost:5000/api/v1/reports`
 
-## Testing
+# Testing
 `$ pip install pytest`
 
 `$ pip install coverage`
+
+### Without Coverage Report
+
+`$ pytest`
+
+### With Coverage Report
 
 `$ coverage run -m pytest`
 
