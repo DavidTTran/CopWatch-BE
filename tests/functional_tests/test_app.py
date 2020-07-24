@@ -2,7 +2,13 @@ import pytest
 import requests
 import json
 
-url = 'http://localhost:5000'
+from dotenv import load_dotenv
+load_dotenv()
+
+import os
+env_url = os.environ.get('TEST_URL')
+
+url = f'http://{env_url}'
 
 def test_index_page():
     response = requests.get(url+'/api/v1/reports')
