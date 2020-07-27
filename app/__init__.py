@@ -9,8 +9,7 @@ from dotenv import load_dotenv
 app = Flask(__name__)
 Manager(app)
 CORS(app)
-# load_dotenv()
-#
+
 app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
