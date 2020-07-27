@@ -30,5 +30,5 @@ class TestingConfig(Config):
 
 # app_config = {
 #     'development': DevelopmentConfig,
-#     'testing': TestingConfig
+#     'production': ProductionConfig
 # }

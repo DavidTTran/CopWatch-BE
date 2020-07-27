@@ -1,14 +1,18 @@
 import os
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from flask_cors import CORS, cross_origin
+from flask_migrate import Migrate, MigrateCommand
+from flask_script import Manager
+from flask_cors import CORS
 
 app = Flask(__name__)
+Manager(app)
 CORS(app)
 
 app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 def _cors_response(response):
     response.headers.add("Access-Control-Allow-Origin", "*")
