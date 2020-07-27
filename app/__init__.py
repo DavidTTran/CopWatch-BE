@@ -6,12 +6,8 @@ from flask_script import Manager
 from flask_cors import CORS
 
 app = Flask(__name__)
-<<<<<<< HEAD
-cors = CORS(app)
 Manager(app)
-=======
 CORS(app)
->>>>>>> 174d5e4... No longer assign "CORS(app)" to a variable
 
 app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

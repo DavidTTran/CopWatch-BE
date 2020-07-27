@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from app.models.report import Report
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from werkzeug import secure_filename
 
 engine = create_engine(os.environ['DATABASE_URL'])
 Session = sessionmaker(bind=engine)
@@ -36,3 +37,9 @@ class ReportRoutes:
         session.commit()
 
         return _cors_response(jsonify(report.serialize()))
+
+    @app.route("/api/v1/uploader", methods=['POST'])
+    def upload_file():
+        file = request.files['file']
+        saved_name = file.save(secure_filename(file.filename))
+        return saved_name
