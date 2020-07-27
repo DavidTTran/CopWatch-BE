@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 
 engine = create_engine(os.environ['DATABASE_URL'])
 Session = sessionmaker(bind=engine)
-Session()
+session = Session()
 
 class ReportRoutes:
 
