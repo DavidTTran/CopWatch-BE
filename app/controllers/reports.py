@@ -5,12 +5,12 @@ from flask_sqlalchemy import SQLAlchemy
 from app.models.report import Report
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-# import cloudinary
-# import cloudinary.uploader
-# import cloudinary.api
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 from dotenv import load_dotenv
 
-# load_dotenv()
+load_dotenv()
 
 engine = create_engine(os.environ['DATABASE_URL'])
 Session = sessionmaker(bind=engine)
@@ -28,17 +28,7 @@ class ReportRoutes:
 
     @app.route("/api/v1/reports/new", methods=['POST'])
     def new_report():
-        # cloudinary.config = (
-        #     cloud_name = "dbqejmifx",
-        #     api_key = "231252341341692",
-        #     api_secret = "RIievjO1xSOZS_bzFUNCmrq_6YE"
-        #     )
-
         json = request.get_json()
-        # image = cloudinary.uploader.upload(json['image'],
-        #     folder = "copwatch",
-        #     public_id = "test")
-        # import code; code.interact(local=dict(globals(), **locals()))
         report = Report(description=json['description'],
                    zip_code=json['zip_code'],
                    city=json['city'],
@@ -54,9 +44,17 @@ class ReportRoutes:
 
         return _cors_response(jsonify(report.serialize()))
 
-    # @app.route("/api/v1/upload", methods=['POST'])
-    # def upload_file():
-    #     import code; code.interact(local=dict(globals(), **locals()))
-    #     file = request.files['file']
-    #     # saved_name = file.save(secure_filename(file.filename))
-    #     return saved_name
+    @app.route("/api/v1/upload", methods=['POST'])
+    def upload_file():
+        cloudinary.config(
+            cloud_name = "dbqejmifx",
+            api_key = "231252341341692",
+            api_secret = "RIievjO1xSOZS_bzFUNCmrq_6YE"
+            )
+
+        json = request.get_json()
+        image = cloudinary.uploader.upload(json['image'],
+            folder = "copwatch",
+            unique_filename = True)
+
+        return jsonify(image)
