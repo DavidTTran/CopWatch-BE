@@ -1,4 +1,5 @@
 import os
+import cloudinary
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 from dotenv import load_dotenv

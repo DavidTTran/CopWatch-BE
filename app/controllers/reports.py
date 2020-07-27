@@ -38,8 +38,9 @@ class ReportRoutes:
 
         return _cors_response(jsonify(report.serialize()))
 
-    @app.route("/api/v1/uploader", methods=['POST'])
+    @app.route("/api/v1/upload", methods=['POST'])
     def upload_file():
+        import code; code.interact(local=dict(globals(), **locals()))
         file = request.files['file']
         saved_name = file.save(secure_filename(file.filename))
         return saved_name
