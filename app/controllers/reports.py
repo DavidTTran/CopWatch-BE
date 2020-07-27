@@ -47,7 +47,7 @@ class ReportRoutes:
                    badge_number=json['badge_number'],
                    parties=json['parties'],
                    created_date=json['created_date'],
-                   image=image.url)
+                   image=json['image'])
 
         session.add(report)
         session.commit()
