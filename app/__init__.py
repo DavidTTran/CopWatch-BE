@@ -11,7 +11,7 @@ Manager(app)
 CORS(app)
 # load_dotenv()
 #
-# app.config.from_object(os.getenv['APP_SETTINGS'])
+app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
