@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from app.models.report import Report
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from werkzeug import secure_filename
+# from werkzeug import secure_filename
 
 engine = create_engine(os.environ['DATABASE_URL'])
 Session = sessionmaker(bind=engine)
@@ -31,7 +31,9 @@ class ReportRoutes:
                    officer_name=json['officer_name'],
                    badge_number=json['badge_number'],
                    parties=json['parties'],
-                   created_date=json['created_date'])
+                   created_date=json['created_date'],
+                   image=json['image'])
+
 
         session.add(report)
         session.commit()
@@ -42,5 +44,5 @@ class ReportRoutes:
     def upload_file():
         import code; code.interact(local=dict(globals(), **locals()))
         file = request.files['file']
-        saved_name = file.save(secure_filename(file.filename))
+        # saved_name = file.save(secure_filename(file.filename))
         return saved_name

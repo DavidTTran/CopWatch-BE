@@ -14,6 +14,7 @@ class Report(db.Model):
     state = db.Column(db.String())
     zip_code = db.Column(db.String())
     created_date = Column(db.String())
+    image = Column(db.Text())
 
     def __init__(self,
                  description,
@@ -23,7 +24,8 @@ class Report(db.Model):
                  officer_name,
                  created_date,
                  badge_number,
-                 parties):
+                 parties,
+                 image):
         self.description = description
         self.badge_number = badge_number
         self.officer_name = officer_name
@@ -32,6 +34,7 @@ class Report(db.Model):
         self.state = state
         self.zip_code = zip_code
         self.created_date = created_date
+        self.image = image
 
     def __repr__(self):
         return 'id: {}'.format(self.id)
@@ -46,5 +49,6 @@ class Report(db.Model):
             'city': self.city,
             'state': self.state,
             'zip_code': self.zip_code,
-            'created_date': self.created_date
+            'created_date': self.created_date,
+            'image': self.image
         }
