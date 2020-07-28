@@ -20,9 +20,14 @@ Within your virtual environment
 `$ touch .env`
 
 Append the following to your .env file
+Sign up for Cloudinary at https://cloudinary.com/
 ```
 APP_SETTINGS="config.DevelopmentConfig"
 DATABASE_URL="postgresql://localhost/copwatch"
+
+CLOUDINARY_NAME=(your cloudinary app name)
+CLOUDINARY_API=(your api key)
+CLOUDINARY_SECRET=(your secret key)
 ```
 
 ### Setup Database and necessary libraries
