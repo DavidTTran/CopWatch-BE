@@ -53,10 +53,10 @@ class ReportRoutes:
             )
 
         json = request.get_json()
-        image_data = json['image']
-        file_data = io.BytesIO(b64decode(image_data))
-        # image = cloudinary.uploader.upload(json['image'],
-        image = cloudinary.uploader.upload(file_data,
+        # image_data = json['image']
+        # file_data = io.BytesIO(b64decode(image_data))
+        image = cloudinary.uploader.upload(json['image'],
+        # image = cloudinary.uploader.upload(file_data,
             folder = "copwatch",
             unique_filename = True)
 
