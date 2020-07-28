@@ -1,15 +1,13 @@
 import os
+# import cloudinary
 basedir = os.path.abspath(os.path.dirname(__file__))
-
-from dotenv import load_dotenv
-load_dotenv()
 
 class Config(object):
     DEBUG = False
     TESTING = False
     CSRF_ENABLED = True
     SECRET_KEY = 'this-really-needs-to-be-changed'
-    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
 class ProductionConfig(Config):
     DEBUG = False
@@ -27,6 +25,12 @@ class TestingConfig(Config):
     TESTING = True
     SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/copwatch_test'
     DEBUG = True
+
+# cloudinary.config = ({
+#     'cloud_name': os.environ['CLOUDINARY_NAME'],
+#     'api_key': os.environ['CLOUDINARY_API_KEY'],
+#     'api_secret': os.environ['CLOUDINARY_API_SECRET']
+#     })
 
 # app_config = {
 #     'development': DevelopmentConfig,
