@@ -47,13 +47,16 @@ class ReportRoutes:
     @app.route("/api/v1/upload", methods=['POST'])
     def upload_file():
         cloudinary.config(
-            cloud_name = "dbqejmifx",
-            api_key = "231252341341692",
-            api_secret = "RIievjO1xSOZS_bzFUNCmrq_6YE"
+            cloud_name = os.environ.get("CLOUDINARY_NAME"),
+            api_key = os.environ.get("CLOUDINARY_API"),
+            api_secret = os.environ.get("CLOUDINARY_SECRET")
             )
 
         json = request.get_json()
-        image = cloudinary.uploader.upload(json['image'],
+        image_data = json['image']
+        file_data = io.BytesIO(b64decode(image_data))
+        # image = cloudinary.uploader.upload(json['image'],
+        image = cloudinary.uploader.upload(file_data,
             folder = "copwatch",
             unique_filename = True)
 
