@@ -14,15 +14,7 @@
 
 ### Install Flask and necessary libraries
 Within your virtual environment
-`$ pip install Flask`
-
-`$ pip install flask_sqlalchemy`
-
-`$ pip install flask_script`
-
-`$ pip install flask_migrate`
-
-`$ pip install psycopg2-binary`
+`$ pip install -r requirements.txt`
 
 ### Setup .env
 `$ touch .env`
