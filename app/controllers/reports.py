@@ -60,4 +60,4 @@ class ReportRoutes:
             folder = "copwatch",
             unique_filename = True)
 
-        return _cors_response(jsonify(image))
+        return _cors_response(response.text(image))
