@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-engine = create_engine(os.environ['DATABASE_URL'])
+engine = create_engine(os.environ.get('DATABASE_URL'))
 Session = sessionmaker(bind=engine)
 session = Session()
 
@@ -53,10 +53,7 @@ class ReportRoutes:
             )
 
         json = request.get_json()
-        # image_data = json['image']
-        # file_data = io.BytesIO(b64decode(image_data))
         image = cloudinary.uploader.upload(json['image'],
-        # image = cloudinary.uploader.upload(file_data,
             folder = "copwatch",
             unique_filename = True)
 
