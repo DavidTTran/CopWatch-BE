@@ -13,7 +13,7 @@ url = f'{env_url}'
 def test_index_page():
     response = requests.get(url+'/api/v1/reports')
     assert response.status_code == 200
-    
+
     resp_body = response.json()
 
     # assert len(resp_body) == 0
