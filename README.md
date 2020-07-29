@@ -1,4 +1,7 @@
 # CopWatch-BE
+[Front-end Repo](https://github.com/oliviacweb/CopWatch-FE)
+
+[Back-end Repo](https://github.com/DavidTTran/CopWatch-BE)
 
 # Setup
 
@@ -55,11 +58,36 @@ Visit at `localhost:5000`
 
 # Current Endpoints
 
-### Returns all of the reports in the Database sorted by most recent.
+## Returns all of the reports in the Database sorted by most recent.
 `localhost:5000/api/v1/reports`
 
-### Creates a new report with information passed through the body in JSON
+## Creates a new report with information passed through the body in JSON
 `localhost:5000/api/v1/reports/new`
+
+#### Example of request body
+```
+{
+  "description": "Example incident report",
+  "parties": "James Family",
+  "city": "Denver",
+  "state": "Colorado",
+  "zip_code": "80104",
+  "badge_number": "12312-112",
+  "officer_name": "O'Haris",
+  "created_date": "Tue, Jul 21, 2020 6:19 PM",
+  "image": "imagehost.example/123.jpg"
+}
+```
+
+## Allows an image to be uploaded
+ `localhost:5000/api/v1/upload`
+ 
+#### Example of request body
+```
+{
+  "image": { local image URI }
+}
+```
 
 # Testing
 `$ pip install pytest`
@@ -77,3 +105,14 @@ Visit at `localhost:5000`
 `$ coverage html --omit="*/venv*"`
 
 `$ open htmlcov/index.html`
+
+## Contributors
+[David Tran](https://github.com/DavidTTran)
+
+[Dave Pernitz](https://github.com/pernstrong)
+
+[Ben Fox](https://github.com/benfox1216)
+
+[Karl Nielsen](https://github.com/Karlfunhouse)
+
+[Olivia Webster](https://github.com/oliviacweb)
