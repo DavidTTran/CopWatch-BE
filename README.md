@@ -14,23 +14,20 @@
 
 ### Install Flask and necessary libraries
 Within your virtual environment
-`$ pip install Flask`
-
-`$ pip install flask_sqlalchemy`
-
-`$ pip install flask_script`
-
-`$ pip install flask_migrate`
-
-`$ pip install psycopg2-binary`
+`$ pip install -r requirements.txt`
 
 ### Setup .env
 `$ touch .env`
 
 Append the following to your .env file
+Sign up for Cloudinary at https://cloudinary.com/
 ```
 APP_SETTINGS="config.DevelopmentConfig"
 DATABASE_URL="postgresql://localhost/copwatch"
+
+CLOUDINARY_NAME=(your cloudinary app name)
+CLOUDINARY_API=(your api key)
+CLOUDINARY_SECRET=(your secret key)
 ```
 
 ### Setup Database and necessary libraries
